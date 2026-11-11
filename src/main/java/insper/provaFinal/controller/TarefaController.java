@@ -12,7 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/objetos")
+@RequestMapping("/tarefas")
 public class TarefaController {
 
     @Autowired
