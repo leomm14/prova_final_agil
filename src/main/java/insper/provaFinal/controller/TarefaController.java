@@ -16,23 +16,23 @@ import java.util.List;
 public class TarefaController {
 
     @Autowired
-    private TarefaService objetoService;
+    private TarefaService tarefaService;
 
     @GetMapping
     public List<Tarefa> listarTodos(@AuthenticationPrincipal Jwt jwt) {
-        return objetoService.listarTodos();
+        return tarefaService.listarTodos();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Tarefa criar(@RequestBody Tarefa objeto, @AuthenticationPrincipal Jwt jwt) {
-        return objetoService.criar(objeto);
+    public Tarefa criar(@RequestBody Tarefa tarefa, @AuthenticationPrincipal Jwt jwt) {
+        return tarefaService.criar(tarefa);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletar(@PathVariable Integer id, @AuthenticationPrincipal Jwt jwt) {
-        objetoService.deletar(id);
+        tarefaService.deletar(id);
     }
 
     private void verificarAdmin(Jwt jwt) {

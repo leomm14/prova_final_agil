@@ -12,23 +12,23 @@ import java.util.List;
 public class TarefaService {
 
     @Autowired
-    private TarefaRepository objetoRepository;
+    private TarefaRepository tarefaRepository;
 
     public List<Tarefa> listarTodos() {
-        return objetoRepository.findAll();
+        return tarefaRepository.findAll();
     }
 
     public Tarefa buscarPorId(Integer id) {
-        return objetoRepository.findById(id)
+        return tarefaRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Registro não encontrado"));
     }
 
-    public Tarefa criar(Tarefa objeto) {
-        return objetoRepository.save(objeto);
+    public Tarefa criar(Tarefa tarefa) {
+        return tarefaRepository.save(tarefa);
     }
 
     public void deletar(Integer id) {
         Tarefa existente = buscarPorId(id);
-        objetoRepository.delete(existente);
+        tarefaRepository.delete(existente);
     }
 }
