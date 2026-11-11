@@ -1,7 +1,7 @@
 package insper.provaFinal.controller;
 
-import insper.provaFinal.entity.Objeto;
-import insper.provaFinal.service.ObjetoService;
+import insper.provaFinal.entity.Tarefa;
+import insper.provaFinal.service.TarefaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -13,25 +13,20 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/objetos")
-public class ObjetoController {
+public class TarefaController {
 
     @Autowired
-    private ObjetoService objetoService;
+    private TarefaService objetoService;
 
     @GetMapping
-    public List<Objeto> listarTodos(@AuthenticationPrincipal Jwt jwt) {
+    public List<Tarefa> listarTodos(@AuthenticationPrincipal Jwt jwt) {
         return objetoService.listarTodos();
-    }
-
-    @GetMapping("/{id}")
-    public Objeto buscarPorId(@PathVariable Integer id, @AuthenticationPrincipal Jwt jwt) {
-        return objetoService.buscarPorId(id);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Objeto criar(@RequestBody Objeto objeto, @AuthenticationPrincipal Jwt jwt) {
-        verificarAdmin(jwt);
+    public Tarefa criar(@RequestBody Tarefa objeto, @AuthenticationPrincipal Jwt jwt) {
+//        verificarAdmin(jwt);
 
 //        if (jwt != null && objeto.getEmailCriador() == null) {
 //            String emailToken = jwt.getClaimAsString("https://social-insper.com/email");
@@ -42,16 +37,10 @@ public class ObjetoController {
         return objetoService.criar(objeto);
     }
 
-    @PutMapping("/{id}")
-    public Objeto atualizar(@PathVariable Integer id, @RequestBody Objeto objeto, @AuthenticationPrincipal Jwt jwt) {
-        verificarAdmin(jwt);
-        return objetoService.atualizar(id, objeto);
-    }
-
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletar(@PathVariable Integer id, @AuthenticationPrincipal Jwt jwt) {
-        verificarAdmin(jwt);
+//        verificarAdmin(jwt);
         objetoService.deletar(id);
     }
 

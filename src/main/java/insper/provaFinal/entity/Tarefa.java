@@ -13,20 +13,14 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Objeto {
+public class Tarefa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String nome;
-
-    private Integer nota;
-    private Integer quantidade;
-    private Double valor;
-
-    private Boolean ativo = true;
-
-    private LocalDateTime dataCriacao = LocalDateTime.now();
-    private LocalDateTime dataEvento;
+    private String email;
+    private String titulo;
+    private String descricao;
+    private Integer prioridade;
 }
