@@ -12,7 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/tarefas")
+@RequestMapping("/tarefa")
 public class TarefaController {
 
     @Autowired
@@ -28,10 +28,10 @@ public class TarefaController {
     public Tarefa criar(@RequestBody Tarefa objeto, @AuthenticationPrincipal Jwt jwt) {
 //        verificarAdmin(jwt);
 
-//        if (jwt != null && objeto.getEmailCriador() == null) {
+//        if (jwt != null && objeto.getEmail() == null) {
 //            String emailToken = jwt.getClaimAsString("https://social-insper.com/email");
 //            if (emailToken == null) emailToken = jwt.getClaimAsString("email");
-//            if (emailToken != null) objeto.setEmailCriador(emailToken);
+//            if (emailToken != null) objeto.setEmail(emailToken);
 //        }
 
         return objetoService.criar(objeto);
