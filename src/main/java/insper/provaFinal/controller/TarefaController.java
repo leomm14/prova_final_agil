@@ -26,21 +26,12 @@ public class TarefaController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Tarefa criar(@RequestBody Tarefa objeto, @AuthenticationPrincipal Jwt jwt) {
-//        verificarAdmin(jwt);
-
-//        if (jwt != null && objeto.getEmail() == null) {
-//            String emailToken = jwt.getClaimAsString("https://social-insper.com/email");
-//            if (emailToken == null) emailToken = jwt.getClaimAsString("email");
-//            if (emailToken != null) objeto.setEmail(emailToken);
-//        }
-
         return objetoService.criar(objeto);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletar(@PathVariable Integer id, @AuthenticationPrincipal Jwt jwt) {
-//        verificarAdmin(jwt);
         objetoService.deletar(id);
     }
 
