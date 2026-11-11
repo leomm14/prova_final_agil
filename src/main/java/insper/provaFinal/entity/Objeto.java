@@ -20,19 +20,8 @@ public class Objeto {
     private Integer id;
 
     private String nome;
-    private String titulo;
-    private String descricao;
-    private String comentario;
-    private String categoria;
-    private String tipo;
-    private String status = "ATIVO";
-
-    private String emailCriador;
-    private String emailDestino;
-    private String cpf;
 
     private Integer nota;
-    private Integer quantidade;
     private Double valor;
 
     private Boolean ativo = true;

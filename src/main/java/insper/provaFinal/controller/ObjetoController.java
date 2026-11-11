@@ -33,11 +33,11 @@ public class ObjetoController {
     public Objeto criar(@RequestBody Objeto objeto, @AuthenticationPrincipal Jwt jwt) {
         verificarAdmin(jwt);
 
-        if (jwt != null && objeto.getEmailCriador() == null) {
-            String emailToken = jwt.getClaimAsString("https://social-insper.com/email");
-            if (emailToken == null) emailToken = jwt.getClaimAsString("email");
-            if (emailToken != null) objeto.setEmailCriador(emailToken);
-        }
+//        if (jwt != null && objeto.getEmailCriador() == null) {
+//            String emailToken = jwt.getClaimAsString("https://social-insper.com/email");
+//            if (emailToken == null) emailToken = jwt.getClaimAsString("email");
+//            if (emailToken != null) objeto.setEmailCriador(emailToken);
+//        }
 
         return objetoService.criar(objeto);
     }

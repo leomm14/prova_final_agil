@@ -38,17 +38,7 @@ public class ObjetoService {
         validar(dadosAtualizados);
 
         if (dadosAtualizados.getNome() != null) existente.setNome(dadosAtualizados.getNome());
-        if (dadosAtualizados.getTitulo() != null) existente.setTitulo(dadosAtualizados.getTitulo());
-        if (dadosAtualizados.getDescricao() != null) existente.setDescricao(dadosAtualizados.getDescricao());
-        if (dadosAtualizados.getComentario() != null) existente.setComentario(dadosAtualizados.getComentario());
-        if (dadosAtualizados.getCategoria() != null) existente.setCategoria(dadosAtualizados.getCategoria());
-        if (dadosAtualizados.getTipo() != null) existente.setTipo(dadosAtualizados.getTipo());
-        if (dadosAtualizados.getStatus() != null) existente.setStatus(dadosAtualizados.getStatus());
-        if (dadosAtualizados.getEmailCriador() != null) existente.setEmailCriador(dadosAtualizados.getEmailCriador());
-        if (dadosAtualizados.getEmailDestino() != null) existente.setEmailDestino(dadosAtualizados.getEmailDestino());
-        if (dadosAtualizados.getCpf() != null) existente.setCpf(dadosAtualizados.getCpf());
         if (dadosAtualizados.getNota() != null) existente.setNota(dadosAtualizados.getNota());
-        if (dadosAtualizados.getQuantidade() != null) existente.setQuantidade(dadosAtualizados.getQuantidade());
         if (dadosAtualizados.getValor() != null) existente.setValor(dadosAtualizados.getValor());
         if (dadosAtualizados.getAtivo() != null) existente.setAtivo(dadosAtualizados.getAtivo());
         if (dadosAtualizados.getDataEvento() != null) existente.setDataEvento(dadosAtualizados.getDataEvento());
@@ -67,9 +57,6 @@ public class ObjetoService {
         }
         if (obj.getValor() != null && obj.getValor() < 0) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O valor não pode ser negativo");
-        }
-        if (obj.getQuantidade() != null && obj.getQuantidade() < 0) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "A quantidade não pode ser negativa");
         }
     }
 }
