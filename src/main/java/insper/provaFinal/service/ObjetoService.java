@@ -39,6 +39,7 @@ public class ObjetoService {
 
         if (dadosAtualizados.getNome() != null) existente.setNome(dadosAtualizados.getNome());
         if (dadosAtualizados.getNota() != null) existente.setNota(dadosAtualizados.getNota());
+        if (dadosAtualizados.getQuantidade() != null) existente.setQuantidade(dadosAtualizados.getQuantidade());
         if (dadosAtualizados.getValor() != null) existente.setValor(dadosAtualizados.getValor());
         if (dadosAtualizados.getAtivo() != null) existente.setAtivo(dadosAtualizados.getAtivo());
         if (dadosAtualizados.getDataEvento() != null) existente.setDataEvento(dadosAtualizados.getDataEvento());

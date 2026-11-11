@@ -22,6 +22,7 @@ public class Objeto {
     private String nome;
 
     private Integer nota;
+    private Integer quantidade;
     private Double valor;
 
     private Boolean ativo = true;
